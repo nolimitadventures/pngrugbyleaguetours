@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import { site, nav, faqs } from '../data/site';
+import Logo from '../components/Logo.astro';
 
 interface Props {
   title: string;
@@ -62,12 +63,7 @@ const faqLd = {
   <header class:list={['site-header', { overlay: overlayHeader }]}>
     <div class="wrap header-inner">
       <a class="brand" href="/" aria-label={`${site.name} home`}>
-        <svg viewBox="0 0 40 40" aria-hidden="true">
-          <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="2"/>
-          <ellipse cx="20" cy="22" rx="11" ry="6.5" transform="rotate(-30 20 22)" fill="none" stroke="currentColor" stroke-width="2"/>
-          <path d="M14.5 25.5 25.5 18.5M17 23.2l1.6 2.3M19.7 21.5l1.6 2.3M22.4 19.8l1.6 2.3" stroke="currentColor" stroke-width="1.6" fill="none"/>
-          <path d="M27 4c2 3 6 4 9 3-2 3-5 4-8 3 1 2 0 4-2 5 0-3-1-5-3-6 2-1 3-3 4-5z" fill="#E8AA1E"/>
-        </svg>
+        <Logo />
         <span>PNG Rugby<br>League Tours</span>
       </a>
       <nav class="site-nav" id="site-nav" aria-label="Main">
@@ -90,12 +86,7 @@ const faqLd = {
       <div class="top">
         <div>
           <a class="brand" href="/">
-            <svg viewBox="0 0 40 40" aria-hidden="true">
-              <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="2"/>
-              <ellipse cx="20" cy="22" rx="11" ry="6.5" transform="rotate(-30 20 22)" fill="none" stroke="currentColor" stroke-width="2"/>
-              <path d="M14.5 25.5 25.5 18.5M17 23.2l1.6 2.3M19.7 21.5l1.6 2.3M22.4 19.8l1.6 2.3" stroke="currentColor" stroke-width="1.6" fill="none"/>
-              <path d="M27 4c2 3 6 4 9 3-2 3-5 4-8 3 1 2 0 4-2 5 0-3-1-5-3-6 2-1 3-3 4-5z" fill="#E8AA1E"/>
-            </svg>
+            <Logo />
             <span>PNG Rugby<br>League Tours</span>
           </a>
           <p>Live rugby league weekends and small-group adventures in Papua New Guinea, arranged end to end.</p>
