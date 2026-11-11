@@ -3,8 +3,8 @@ import Base from '../layouts/Base.astro';
 import TripList from '../components/TripList.astro';
 import CtaBand from '../components/CtaBand.astro';
 ---
-<Base title="Trip styles" description="Rugby league match weekends in Port Moresby: Match Weekend for fans and couples, Team & Client Trips for corporates, and The Footy Trip for groups of mates.">
-  <section class="sec dark page-head">
+<Base title="Trip styles" description="Rugby league match weekends in Port Moresby: Match Weekend for fans and couples, Team & Client Trips for corporates, and The Footy Trip for groups of mates." image="/images/hero-huli-stadium.webp">
+  <section class="sec dark page-head with-photo">
     <div class="wrap">
       <p class="label">Trip styles</p>
       <div class="body">
@@ -13,6 +13,10 @@ import CtaBand from '../components/CtaBand.astro';
       </div>
     </div>
   </section>
+  <figure class="page-photo">
+    <img src="/images/hero-huli-stadium.webp" alt="Huli performers in painted faces and feathered headdresses on a rugby league field before a match" width="1276" height="849" fetchpriority="high" style="object-position:50% 35%">
+    <figcaption>Huli performers · pre-match entertainment</figcaption>
+  </figure>
 
   <section class="sec">
     <div class="wrap">
