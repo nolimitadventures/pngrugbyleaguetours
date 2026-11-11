@@ -1,0 +1,30 @@
+---
+interface Props { heading?: string; text?: string }
+const {
+  heading = 'Join the founding supporters list',
+  text = 'Packages are released once the 2028 draw is confirmed. Leave your details and you’ll hear first, with no obligation.',
+} = Astro.props;
+---
+<section class="sec dark">
+  <div class="wrap">
+    <p class="label">Register interest</p>
+    <div class="body">
+      <h2>{heading}</h2>
+      <p class="lede muted">{text}</p>
+      <form class="cta-form form-grid" action="/enquire/" method="get">
+        <div><label for="cta-name">Name</label><input id="cta-name" name="name" autocomplete="name"></div>
+        <div><label for="cta-email">Email</label><input id="cta-email" name="email" type="email" autocomplete="email"></div>
+        <div><label for="cta-type">I’m planning</label>
+          <select id="cta-type" name="type">
+            <option>Not sure yet</option>
+            <option>A trip for 1–2</option>
+            <option>A group of mates</option>
+            <option>A corporate or team trip</option>
+            <option>A supporter club trip</option>
+          </select>
+        </div>
+        <button class="btn light" type="submit">Continue</button>
+      </form>
+    </div>
+  </div>
+</section>

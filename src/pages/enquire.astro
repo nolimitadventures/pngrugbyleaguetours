@@ -1,0 +1,77 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+---
+<Base title="Register interest" description="Join the founding supporters list for rugby league trips to Papua New Guinea, or ask us about a group or corporate trip.">
+  <section class="sec dark page-head">
+    <div class="wrap">
+      <p class="label">Register interest</p>
+      <div class="body">
+        <h1>Join the founding supporters list</h1>
+        <p class="lede muted">Packages are released once the 2028 draw is confirmed. Leave your details and you’ll hear first. Nothing here commits you to anything.</p>
+        <div class="perks">
+          <span>First access to match weekends</span>
+          <span>Early-booking offers</span>
+          <span>Draw and ticket on-sale news</span>
+          <span>One planner, start to finish</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec dark" style="border-top:1px solid var(--rule-dark)">
+    <div class="wrap">
+      <p class="label">Your details</p>
+      <div class="body">
+        <form class="form-grid" id="enquiry" action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value={site.web3formsKey}>
+          <input type="hidden" name="subject" value="New PNG rugby league tour enquiry">
+          <input type="hidden" name="from_name" value="PNG Rugby League Tours website">
+          <input type="hidden" name="redirect" id="redirect" value={`${site.url}/thanks/`}>
+          <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <div><label for="name">Name</label><input id="name" name="name" required autocomplete="name"></div>
+          <div><label for="email">Email</label><input id="email" name="email" type="email" required autocomplete="email"></div>
+          <div><label for="phone">Phone <span class="hint">(optional)</span></label><input id="phone" name="phone" type="tel" autocomplete="tel"></div>
+          <div><label for="country">Where you’re travelling from</label><input id="country" name="country" autocomplete="address-level2" placeholder="e.g. Brisbane"></div>
+          <div><label for="type">I’m planning</label>
+            <select id="type" name="trip_type">
+              <option>Not sure yet</option>
+              <option>A trip for 1–2</option>
+              <option>A group of mates</option>
+              <option>A corporate or team trip</option>
+              <option>A supporter club trip</option>
+            </select>
+          </div>
+          <div><label for="group">How many travelling</label><input id="group" name="group_size" placeholder="e.g. 8 people"></div>
+          <fieldset class="full">
+            <legend>Interested in adding</legend>
+            <label class="tick"><input type="checkbox" name="extensions[]" value="Dive"><span>Dive</span></label>
+            <label class="tick"><input type="checkbox" name="extensions[]" value="Fishing"><span>Fishing</span></label>
+            <label class="tick"><input type="checkbox" name="extensions[]" value="Highlands"><span>Highlands</span></label>
+            <label class="tick"><input type="checkbox" name="extensions[]" value="Goroka Show"><span>Goroka Show</span></label>
+            <label class="tick"><input type="checkbox" name="extensions[]" value="Kokoda"><span>Kokoda</span></label>
+            <label class="tick"><input type="checkbox" name="extensions[]" value="Surf"><span>Surf</span></label>
+          </fieldset>
+          <div class="full"><label for="message">Anything else?</label><textarea id="message" name="message" rows="5" placeholder="Dates you have in mind, a special occasion, a team trip…"></textarea></div>
+          <div class="full"><button class="btn light" type="submit">Join the list</button></div>
+        </form>
+        <div class="rows" style="margin-top:24px">
+          <div><h3>Prefer to talk?</h3><p>{site.phones.map((p) => <><a href={p.href}>{p.label}</a><br></>)}<a href={`mailto:${site.email}`}>{site.email}</a></p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Prefill from the short form used across the site (?name=&email=&type=)
+    const q = new URLSearchParams(location.search);
+    for (const [k, id] of [['name', 'name'], ['email', 'email'], ['type', 'type']]) {
+      const v = q.get(k);
+      const el = document.getElementById(id) as HTMLInputElement | HTMLSelectElement | null;
+      if (v && el) el.value = v;
+    }
+    // Keep the thank-you redirect on whatever domain the site is served from
+    const r = document.getElementById('redirect') as HTMLInputElement | null;
+    if (r) r.value = `${location.origin}/thanks/`;
+  </script>
+</Base>

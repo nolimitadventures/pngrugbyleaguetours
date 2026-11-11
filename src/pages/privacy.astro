@@ -1,0 +1,28 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+---
+<Base title="Privacy">
+  <section class="sec dark page-head">
+    <div class="wrap">
+      <p class="label">Privacy</p>
+      <div class="body"><h1>Privacy policy</h1></div>
+    </div>
+  </section>
+  <section class="sec">
+    <div class="wrap">
+      <p class="label">Your information</p>
+      <div class="body prose">
+        <p>PNG Rugby League Tours is a brand of No Limit Adventures Pty Ltd (ABN {site.abn}). We respect your privacy and handle personal information in line with the Australian Privacy Principles.</p>
+        <h2>What we collect</h2>
+        <p>When you register interest or enquire, we collect the details you give us, such as your name, email, phone number, travel plans and group size.</p>
+        <h2>How we use it</h2>
+        <p>We use your details to reply to your enquiry, plan and book your trip, and send you updates about rugby league trips to Papua New Guinea. You can unsubscribe at any time.</p>
+        <h2>Who we share it with</h2>
+        <p>We only share your details with suppliers needed to deliver your trip, such as airlines, hotels and local operators. Our website form is processed by Web3Forms, which forwards your message to our inbox. We never sell your information.</p>
+        <h2>Contact</h2>
+        <p>To access or correct your information, email {site.email} or write to {site.address}.</p>
+      </div>
+    </div>
+  </section>
+</Base>

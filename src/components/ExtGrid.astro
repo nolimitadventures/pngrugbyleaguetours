@@ -1,0 +1,18 @@
+---
+import { extensions } from '../data/trips';
+interface Props { showLength?: boolean }
+const { showLength = false } = Astro.props;
+---
+<div class="ext-grid">
+  {extensions.map((x) => (
+    <article class="x" id={x.id}>
+      {x.img
+        ? <img src={x.img} alt={x.alt} width={x.w} height={x.h} loading="lazy" decoding="async">
+        : <div class="noimg" aria-hidden="true">{x.placeholder}</div>}
+      <span class="meta">{x.meta}{showLength && ` · ${x.length}`}</span>
+      <h3>{x.name}</h3>
+      <p>{x.text}</p>
+      {x.link && <a class="ulink" href={x.link.href}>{x.link.label} →</a>}
+    </article>
+  ))}
+</div>

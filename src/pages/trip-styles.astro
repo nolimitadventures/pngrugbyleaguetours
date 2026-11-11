@@ -1,0 +1,58 @@
+---
+import Base from '../layouts/Base.astro';
+import TripList from '../components/TripList.astro';
+import CtaBand from '../components/CtaBand.astro';
+---
+<Base title="Trip styles" description="Rugby league match weekends in Port Moresby: Match Weekend for fans and couples, Team & Client Trips for corporates, and The Footy Trip for groups of mates.">
+  <section class="sec dark page-head">
+    <div class="wrap">
+      <p class="label">Trip styles</p>
+      <div class="body">
+        <h1>Match weekends in Port Moresby</h1>
+        <p class="lede muted">Every trip is built around a home game, with flights, hotel, transfers and a local host arranged for you. Pick the style that suits your group, and we’ll shape the details around it.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <p class="label">Choose a style</p>
+      <div class="body">
+        <TripList />
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <p class="label">What’s included</p>
+      <div class="body">
+        <h2>What we take care of</h2>
+        <div class="split" style="grid-template-columns:minmax(0,1fr) minmax(0,1fr)">
+          <div class="copy">
+            <p class="label">Included in every package</p>
+            <ul class="ticks">
+              <li>Return flights from Brisbane, Cairns, Sydney and other Australian cities</li>
+              <li>Quality accommodation in Port Moresby, close to the action</li>
+              <li>Airport transfers and private match-day transport</li>
+              <li>Guided tours: cultural shows, local markets, village visits or nature escapes</li>
+              <li>A local host and friendly support on the ground throughout</li>
+              <li>Pre-departure pack covering visas, health and what to pack</li>
+            </ul>
+          </div>
+          <div class="copy">
+            <p class="label">Not included</p>
+            <ul class="ticks no">
+              <li>Match tickets. These are bought through the official ticketing outlet, and we’ll tell you when and how.</li>
+              <li>Travel insurance (required)</li>
+              <li>PNG tourist visa fees</li>
+              <li>Meals and drinks not listed in your itinerary</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CtaBand />
+</Base>

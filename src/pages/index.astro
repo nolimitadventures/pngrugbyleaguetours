@@ -1,0 +1,88 @@
+---
+import Base from '../layouts/Base.astro';
+import TripList from '../components/TripList.astro';
+import Faq from '../components/Faq.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { site } from '../data/site';
+---
+<Base title={site.name} overlayHeader faqSchema>
+  <section class="hero">
+    <img src="/images/hero-huli-stadium.webp" alt="Huli performers in painted faces and feathered headdresses on a rugby league field before a match" width="1276" height="849" fetchpriority="high">
+    <div class="wrap">
+      <span class="chip">Rugby league in Papua New Guinea · 2028 season</span>
+      <h1>Live rugby league in PNG. Every detail arranged.</h1>
+    </div>
+  </section>
+
+  <section class="sec dark tight">
+    <div class="wrap">
+      <p class="label">The trip</p>
+      <div class="body">
+        <p class="lede">Match weekends in Port Moresby for travelling fans, groups of mates and corporate teams, planned end to end by a Cairns-based team who’ve been travelling to Papua New Guinea for over 15 years.</p>
+        <div style="display:flex;flex-wrap:wrap;align-items:center;gap:22px">
+          <a class="btn light" href="/enquire/">Join the founding supporters list</a>
+          <a class="ulink" href="/trip-styles/">See the trip styles ▸</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <figure class="band-photo">
+    <img src="/images/port-moresby-aerial.webp" alt="Aerial view of Port Moresby and its harbour, with reef and islands offshore" width="916" height="708" loading="lazy" decoding="async">
+    <figcaption>Port Moresby · National Capital District</figcaption>
+  </figure>
+
+  <section class="sec" id="why">
+    <div class="wrap">
+      <p class="label">Why PNG</p>
+      <div class="body">
+        <h2>The only country on earth where rugby league is the national sport</h2>
+        <div class="split">
+          <div class="copy">
+            <p class="lede">From 2028, Port Moresby hosts top-flight professional rugby league. You’ll be there with one of the most passionate home crowds in the game.</p>
+            <p>Match days here are about more than the result. Fans travel in from every province, the singing starts hours before kick-off, and the whole city turns out. Most of our guests are visiting PNG for the first time, and plenty of them stay on for the Highlands, the islands and the reef.</p>
+          </div>
+          <figure><img src="/images/kids-lagoon.webp" alt="Four smiling children swimming in a clear green lagoon" width="620" height="409" loading="lazy" decoding="async"></figure>
+        </div>
+        <div class="facts">
+          <div><b>3 h 15 m</b><span>Brisbane to Port Moresby, direct</span></div>
+          <div><b>0 h</b><span>Time difference to AEST</span></div>
+          <div><b>800+</b><span>Languages spoken in PNG</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <p class="label">Why book with us</p>
+      <div class="body">
+        <h2>You could plan PNG yourself. Here’s why our guests don’t.</h2>
+        <div class="rows">
+          <div><h3>15+ years in PNG</h3><p>We’ve run tours across the Highlands, the islands and the coast for over 15 years, with local partners we know personally.</p></div>
+          <div><h3>A trusted tourism partner</h3><p>A close industry partner of the PNG Tourism Promotion Authority, and members of the PNG Dive Association and the Surfing Association of PNG.</p></div>
+          <div><h3>Everything around the match</h3><p>Flights, secure hotels close to the action, private transfers and a local host on the ground. You enjoy the footy.</p></div>
+          <div><h3>One person, start to finish</h3><p>One planner who knows your trip, reachable before you go and while you’re there. No call centres.</p></div>
+          <div><h3>More than the match</h3><p>Dive, fish, trek or head to the Highlands before or after the game, with flights sequenced so nothing feels rushed.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="trips">
+    <div class="wrap">
+      <p class="label">Trip styles</p>
+      <div class="body">
+        <h2>Three ways to do a PNG match weekend</h2>
+        <TripList linkTo="detail" />
+        <div class="strip">
+          <span><span class="label">Extend your trip</span>&nbsp;&nbsp; Add diving, fishing, Kokoda or the Highlands after the match.</span>
+          <a class="ulink" href="/extend-your-trip/">See the options →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Faq />
+  <CtaBand />
+</Base>

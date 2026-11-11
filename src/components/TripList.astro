@@ -1,0 +1,24 @@
+---
+import { trips } from '../data/trips';
+interface Props { linkTo?: 'enquire' | 'detail' }
+const { linkTo = 'enquire' } = Astro.props;
+---
+<div class="trips">
+  {trips.map((t) => (
+    <article class="trip" id={t.id}>
+      <div class="pic"><img src={t.img} alt={t.alt} width={t.w} height={t.h} loading="lazy" decoding="async"></div>
+      <div class="txt">
+        <p class="label">{t.label}</p>
+        <h3>{t.name}</h3>
+        <p>{t.intro}</p>
+        <dl class="spec">
+          {t.spec.map(([k, v]) => (<><dt>{k}</dt><dd>{v}</dd></>))}
+          <dt>Packages</dt><dd class="status">{t.status}<small>{t.statusNote}</small></dd>
+        </dl>
+        {linkTo === 'detail'
+          ? <a class="ulink" href={`/trip-styles/#${t.id}`}>More on {t.name} →</a>
+          : <a class="ulink" href="/enquire/">{t.cta} →</a>}
+      </div>
+    </article>
+  ))}
+</div>

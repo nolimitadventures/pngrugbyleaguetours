@@ -1,0 +1,53 @@
+---
+import Base from '../layouts/Base.astro';
+import CtaBand from '../components/CtaBand.astro';
+import { site } from '../data/site';
+---
+<Base title="About us" description="PNG Rugby League Tours is a brand of No Limit Adventures, a Cairns-based Inbound Tour Operator with over 15 years’ experience in Papua New Guinea." image="/images/highlander.webp">
+  <section class="sec dark page-head with-photo">
+    <div class="wrap">
+      <p class="label">About us</p>
+      <div class="body">
+        <h1>PNG specialists, just across the water in Cairns</h1>
+        <p class="lede muted">We’ve been taking travellers to Papua New Guinea for over 15 years: to the Highlands, the islands, the reefs and the surf. Now we’re taking them to the footy.</p>
+      </div>
+    </div>
+  </section>
+  <figure class="page-photo">
+    <img src="/images/highlander.webp" alt="Close portrait of a Highlands man in a red feather headdress and blue and yellow face paint" width="1000" height="662" fetchpriority="high" style="object-position:50% 30%">
+    <figcaption>Western Highlands</figcaption>
+  </figure>
+
+  <section class="sec">
+    <div class="wrap">
+      <p class="label">Who we are</p>
+      <div class="body">
+        <h2>A brand of No Limit Adventures</h2>
+        <div class="split">
+          <div class="copy">
+            <p class="lede">PNG Rugby League Tours is a brand of <a href={site.links.nla}>No Limit Adventures</a>, a registered Inbound Tour Operator and DMC specialising in tailored adventure, dive and surf travel to Australia and Papua New Guinea.</p>
+            <p>We work closely with the PNG Tourism Promotion Authority, the PNG Dive Association and the Surfing Association of PNG, and directly with locally owned and operated businesses, so the money you spend stays where it should.</p>
+            <p>We are an independent travel company. We’re not affiliated with any rugby league club, competition or governing body, and match tickets are not part of our packages.</p>
+          </div>
+          <figure><img src="/images/goroka-festival.webp" alt="Painted performers in feathered headdresses at the Goroka Cultural Festival" width="1115" height="742" loading="lazy" decoding="async"></figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <p class="label">Credentials</p>
+      <div class="body">
+        <div class="rows">
+          <div><h3>Inbound Tour Operator</h3><p>Registered ITO #{site.ito}. ABN {site.abn}.</p></div>
+          <div><h3>PNG Tourism Promotion Authority</h3><p>Close industry partner.</p></div>
+          <div><h3>PNG Dive Association</h3><p>Active member.</p></div>
+          <div><h3>Surfing Association of PNG</h3><p>Member since 2009, through our sister brand <a href={site.links.surf}>PNG Surf Adventures</a>.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CtaBand />
+</Base>

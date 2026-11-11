@@ -1,0 +1,46 @@
+---
+import Base from '../layouts/Base.astro';
+import ExtGrid from '../components/ExtGrid.astro';
+import CtaBand from '../components/CtaBand.astro';
+---
+<Base title="Extend your trip" description="Add diving, sport fishing, Kokoda, the Highlands, the Goroka Show or surfing to your rugby league weekend in Papua New Guinea." image="/images/island-reef.webp">
+  <section class="sec dark page-head with-photo">
+    <div class="wrap">
+      <p class="label">Extend your trip</p>
+      <div class="body">
+        <h1>You’ve done the flight. Stay a little longer.</h1>
+        <p class="lede muted">Most of our guests are in PNG for the first time, and a weekend is rarely enough. Add a few days before or after the match. We sequence the domestic flights so you leave Port Moresby the morning after the game.</p>
+      </div>
+    </div>
+  </section>
+  <figure class="page-photo">
+    <img src="/images/island-reef.webp" alt="A small forested island surrounded by clear blue reef water" width="1000" height="749" fetchpriority="high">
+    <figcaption>PNG islands</figcaption>
+  </figure>
+
+  <section class="sec">
+    <div class="wrap">
+      <p class="label">The options</p>
+      <div class="body">
+        <h2>Reef, river, track or Highlands</h2>
+        <ExtGrid showLength />
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <p class="label">Good to know</p>
+      <div class="body">
+        <h2>How extensions work</h2>
+        <div class="rows">
+          <div><h3>Before or after</h3><p>Most guests head off the morning after the match. Some arrive early for the Highlands and finish with the footy.</p></div>
+          <div><h3>Mix and match</h3><p>Split a group: some dive while others fish, and everyone meets back in Port Moresby for the flight home.</p></div>
+          <div><h3>Partners welcome</h3><p>Extensions suit people who don’t follow the game, so partners often join for this part of the trip.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CtaBand heading="Planning the full trip?" text="Tell us which extensions you’re interested in and we’ll build them around your match weekend." />
+</Base>
