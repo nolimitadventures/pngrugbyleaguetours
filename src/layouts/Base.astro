@@ -1,7 +1,6 @@
 ---
 import '../styles/global.css';
 import { site, nav, faqs } from '../data/site';
-import Logo from '../components/Logo.astro';
 
 interface Props {
   title: string;
@@ -10,7 +9,7 @@ interface Props {
   image?: string;
   faqSchema?: boolean;
 }
-const { title, description = site.description, overlayHeader = false, image = '/images/hero-huli-stadium.webp', faqSchema = false } = Astro.props;
+const { title, description = site.description, overlayHeader = false, image = '/images/png-flag.webp', faqSchema = false } = Astro.props;
 const canonical = new URL(Astro.url.pathname, site.url).href;
 const path = Astro.url.pathname;
 const fullTitle = title === site.name ? `${site.name} | Live Rugby League Trips to Papua New Guinea` : `${title} | ${site.name}`;
@@ -63,7 +62,7 @@ const faqLd = {
   <header class:list={['site-header', { overlay: overlayHeader }]}>
     <div class="wrap header-inner">
       <a class="brand" href="/" aria-label={`${site.name} home`}>
-        <Logo />
+        <img class="nla" src="/images/nla-logo-light.png" alt="No Limit Adventures" width="800" height="244">
         <span>PNG Rugby<br>League Tours</span>
       </a>
       <nav class="site-nav" id="site-nav" aria-label="Main">
@@ -86,8 +85,8 @@ const faqLd = {
       <div class="top">
         <div>
           <a class="brand" href="/">
-            <Logo />
-            <span>PNG Rugby<br>League Tours</span>
+            <img class="nla" src="/images/nla-logo-light.png" alt="No Limit Adventures" width="800" height="244">
+        <span>PNG Rugby<br>League Tours</span>
           </a>
           <p>Live rugby league weekends and small-group adventures in Papua New Guinea, arranged end to end.</p>
         </div>

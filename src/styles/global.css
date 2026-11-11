@@ -238,3 +238,14 @@ details p { padding-bottom: 18px; color: var(--muted); max-width: 64ch; }
 .prose p, .prose li { color: var(--muted); }
 .form-grid label.tick { font-family: var(--body); letter-spacing: 0; text-transform: none; color: var(--ground); }
 .form-grid > div:has(> button) { justify-items: start; }
+
+/* No Limit Adventures logo + sub-brand name */
+.brand { gap: 14px; }
+.brand img.nla { width: auto; height: 44px; }
+.brand span { padding-left: 14px; border-left: 1px solid rgba(241,237,230,.4); font-size: 1rem; }
+@media (max-width: 420px) { .brand img.nla { height: 36px; } .brand span { font-size: .85rem; padding-left: 10px; } }
+
+/* Flag hero: bird of paradise kept clear on the right, headline over the black field */
+.hero.flag > img { object-position: 50% 22%; }
+.hero.flag::after { background: linear-gradient(180deg, rgba(18,16,16,.55) 0, rgba(18,16,16,0) 22%), linear-gradient(90deg, rgba(18,16,16,.8) 0, rgba(18,16,16,.45) 45%, rgba(18,16,16,0) 70%); }
+@media (max-width: 700px) { .hero.flag > img { object-position: 70% 50%; } .hero.flag::after { background: linear-gradient(180deg, rgba(18,16,16,.5) 0, rgba(18,16,16,.15) 35%, rgba(18,16,16,.8) 100%); } }
